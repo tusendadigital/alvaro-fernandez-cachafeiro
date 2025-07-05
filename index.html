@@ -1,16 +1,17 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Álvaro Fernández Cachafeiro | Portfolio</title>
 <script src="https://cdn.tailwindcss.com/3.4.16"></script>
 <script>tailwind.config={theme:{extend:{colors:{primary:'#3B82F6',secondary:'#64748B'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet"/>
 <style>
 :where([class^="ri-"])::before { content: "\f3c2"; }
 body {
@@ -30,24 +31,53 @@ input:focus, textarea:focus {
 outline: none;
 border-color: #3B82F6;
 }
+
+.swiper-slide {
+  width: 100% !important;
+  max-width: 900px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  white-space: normal !important;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
 </style>
-</head>
+<style>
+.professional-testimonials {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+.swiper-slide blockquote {
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+.swiper-slide .author {
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-top: 10px;
+}
+.swiper-slide .relation {
+  font-size: 0.9rem;
+  color: #666;
+}
+</style></head>
 <body class="bg-white text-gray-800">
 <!-- Navbar -->
 <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
 <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-<a href="#" class="text-2xl font-['Pacifico'] text-primary">Álvaro</a>
+<a class="text-2xl font-['Pacifico'] text-primary" href="#">Álvaro</a>
 <div class="hidden md:flex items-center space-x-8">
-<a href="#sobre-mi" class="text-gray-700 hover:text-primary transition-colors">Sobre mí</a>
-<a href="#proyecto" class="text-gray-700 hover:text-primary transition-colors">Proyecto destacado</a>
-<a href="#recomendaciones" class="text-gray-700 hover:text-primary transition-colors">Recomendaciones</a>
-<a href="#contacto" class="text-gray-700 hover:text-primary transition-colors">Contacto</a>
+<a class="text-gray-700 hover:text-primary transition-colors" href="#sobre-mi">Sobre mí</a>
+<a class="text-gray-700 hover:text-primary transition-colors" href="#proyecto">Proyecto destacado</a>
+<a class="text-gray-700 hover:text-primary transition-colors" href="#recomendaciones">Recomendaciones</a>
+<a class="text-gray-700 hover:text-primary transition-colors" href="#contacto">Contacto</a>
 </div>
 <div class="flex items-center space-x-4">
-<a href="https://www.linkedin.com/in/alvarofdezcachafeiro/" target="_blank" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary transition-colors">
+<a class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary transition-colors" href="https://www.linkedin.com/in/alvarofdezcachafeiro/" target="_blank">
 <i class="ri-linkedin-fill ri-lg"></i>
 </a>
-<a href="https://www.instagram.com/caacha97/" target="_blank" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary transition-colors">
+<a class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary transition-colors" href="https://www.instagram.com/caacha97/" target="_blank">
 <i class="ri-instagram-line ri-lg"></i>
 </a>
 <button class="md:hidden w-10 h-10 flex items-center justify-center" id="menuButton">
@@ -58,29 +88,29 @@ border-color: #3B82F6;
 <!-- Mobile menu -->
 <div class="md:hidden hidden bg-white w-full shadow-md" id="mobileMenu">
 <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
-<a href="#sobre-mi" class="text-gray-700 hover:text-primary transition-colors py-2">Sobre mí</a>
-<a href="#proyecto" class="text-gray-700 hover:text-primary transition-colors py-2">Proyecto destacado</a>
-<a href="#recomendaciones" class="text-gray-700 hover:text-primary transition-colors py-2">Recomendaciones</a>
-<a href="#contacto" class="text-gray-700 hover:text-primary transition-colors py-2">Contacto</a>
+<a class="text-gray-700 hover:text-primary transition-colors py-2" href="#sobre-mi">Sobre mí</a>
+<a class="text-gray-700 hover:text-primary transition-colors py-2" href="#proyecto">Proyecto destacado</a>
+<a class="text-gray-700 hover:text-primary transition-colors py-2" href="#recomendaciones">Recomendaciones</a>
+<a class="text-gray-700 hover:text-primary transition-colors py-2" href="#contacto">Contacto</a>
 </div>
 </div>
 </nav>
 <!-- Hero Section -->
 <section class="pt-24 pb-16 relative overflow-hidden" id="sobre-mi">
-<div class="absolute inset-0 z-0" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20professional%20office%20environment%20with%20blue%20accents%2C%20minimalist%20design%2C%20clean%20workspace%2C%20soft%20lighting%2C%20blurred%20background%2C%20perfect%20for%20portfolio%20hero%20section%2C%20high%20quality%20professional%20photography&width=1920&height=1080&seq=1&orientation=landscape'); background-size: cover; background-position: center;"></div>
+<div class="absolute inset-0 z-0" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20professional%20office%20environment%20with%20blue%20accents%2C%20minimalist%20design%2C%20clean%20workspace%2C%20soft%20lighting%2C%20blurred%20background%2C%20perfect%20for%20portfolio%20hero%20section%2C%20high%20quality%20professional%20photography&amp;width=1920&amp;height=1080&amp;seq=1&amp;orientation=landscape'); background-size: cover; background-position: center;"></div>
 <div class="container mx-auto px-4 relative z-10">
 <div class="flex flex-col md:flex-row items-center">
 <div class="w-full md:w-1/2 hero-gradient p-8 rounded-lg">
 <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Álvaro Fernández Cachafeiro</h1>
 <p class="text-xl text-gray-700 mb-6">Profesional apasionado por el desarrollo de marca personal y estrategias de networking efectivas.</p>
 <div class="flex flex-wrap gap-4">
-<a href="#contacto" class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-blue-600 transition-colors">Contactar</a>
-<a href="#proyecto" class="bg-white text-primary border border-primary px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-50 transition-colors">Ver proyecto</a>
+<a class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-blue-600 transition-colors" href="#contacto">Contactar</a>
+<a class="bg-white text-primary border border-primary px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-50 transition-colors" href="#proyecto">Ver proyecto</a>
 </div>
 </div>
 <div class="w-full md:w-1/2 flex justify-center mt-8 md:mt-0">
 <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl">
-<img src="https://static.readdy.ai/image/2e20d4d8a8cb5d0f970d00024319a37a/60843a60ad6468af3e5ebc1afe6912bc.png" alt="Álvaro Fernández Cachafeiro" class="w-full h-full object-cover object-center">
+<img alt="Álvaro Fernández Cachafeiro" class="w-full h-full object-cover object-center" src="https://static.readdy.ai/image/2e20d4d8a8cb5d0f970d00024319a37a/60843a60ad6468af3e5ebc1afe6912bc.png"/>
 </div>
 </div>
 </div>
@@ -124,7 +154,7 @@ border-color: #3B82F6;
 <h2 class="text-3xl font-bold mb-12 text-center">Proyecto Destacado</h2>
 <div class="flex flex-col md:flex-row items-center bg-gray-50 rounded-lg overflow-hidden shadow-sm">
 <div class="w-full md:w-1/2">
-<img src="https://readdy.ai/api/search-image?query=professional%20workshop%20environment%2C%20people%20learning%20about%20personal%20branding%2C%20LinkedIn%20optimization%20class%2C%20modern%20conference%20room%2C%20business%20professionals%20attending%20a%20seminar%2C%20high%20quality%20professional%20photography&width=800&height=600&seq=3&orientation=landscape" alt="Curso de Marca Personal" class="w-full h-full object-cover object-top">
+<img alt="Curso de Marca Personal" class="w-full h-full object-cover object-top" src="https://readdy.ai/api/search-image?query=professional%20workshop%20environment%2C%20people%20learning%20about%20personal%20branding%2C%20LinkedIn%20optimization%20class%2C%20modern%20conference%20room%2C%20business%20professionals%20attending%20a%20seminar%2C%20high%20quality%20professional%20photography&amp;width=800&amp;height=600&amp;seq=3&amp;orientation=landscape"/>
 </div>
 <div class="w-full md:w-1/2 p-8">
 <div class="flex items-center mb-4">
@@ -137,7 +167,7 @@ border-color: #3B82F6;
 <div class="bg-blue-50 border-l-4 border-primary p-4 mb-6">
 <p class="text-gray-700 italic">"Un curso transformador que cambia la forma de entender y gestionar tu marca personal en el entorno digital actual."</p>
 </div>
-<a href="https://www.elrincondelhacker.es/pagina-de-ventas-linkedin" target="_blank" class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-blue-600 transition-colors inline-flex items-center">
+<a class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-blue-600 transition-colors inline-flex items-center" href="https://www.elrincondelhacker.es/pagina-de-ventas-linkedin" target="_blank">
 Conocer más sobre el curso
 <i class="ri-arrow-right-line ml-2"></i>
 </a>
@@ -146,65 +176,196 @@ Conocer más sobre el curso
 </div>
 </section>
 <!-- Recommendations Section -->
-<section class="py-16 bg-gray-50" id="recomendaciones">
-<div class="container mx-auto px-4">
-<h2 class="text-3xl font-bold mb-4 text-center">Recomendaciones</h2>
-<p class="text-lg text-gray-600 mb-12 text-center max-w-2xl mx-auto">Lo que dicen mis colegas y clientes sobre mi trabajo y colaboraciones profesionales.</p>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<div class="testimonial-card bg-white p-6 rounded-lg shadow-sm">
-<div class="flex items-start mb-4">
-<div class="w-12 h-12 rounded-full overflow-hidden mr-4 flex-shrink-0">
-<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20business%20woman%2C%2040s%2C%20corporate%20attire%2C%20neutral%20background%2C%20high%20quality%20professional%20photography&width=100&height=100&seq=4&orientation=squarish" alt="María González" class="w-full h-full object-cover object-top">
-</div>
+<section class="py-16 bg-white text-gray-900 professional-testimonials" id="recomendaciones">
+<div class="max-w-6xl mx-auto px-4">
+<h2 class="text-4xl font-extrabold mb-6 text-center text-yellow-500" style="text-align: center; font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; color: #333;">Opiniones</h2>
+<p class="text-lg text-gray-600 mb-10 text-center max-w-2xl mx-auto italic">Lo que dicen mis colegas y clientes sobre mi trabajo y colaboraciones profesionales.</p>
+<div class="swiper mySwiper rounded-lg shadow-lg border">
+<div class="swiper-wrapper">
+<div class="swiper-slide bg-gray-100 rounded-xl shadow p-6 m-2 h-auto flex flex-col justify-between" style="padding: 2rem; background: #fff; border-radius: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.05);max-width: 800px; margin: 0 auto; color: #222;">
 <div>
-<h4 class="font-semibold">María González</h4>
-<p class="text-sm text-gray-600">Directora de Marketing, TechSolutions</p>
+<h3 class="text-xl font-semibold text-yellow-600 mb-1">Thomas O’neil Álvarez</h3>
+<p class="text-sm text-gray-500 mb-1">ETHICAL HACKER | OSINT | THREAT INTELLIGENCE | RED TEAM | DIVULGADOR | CIBERCOOPERANTE INCIBE</p>
+<p class="text-xs text-gray-400 mb-3">📅 31 de mayo de 2025 — <span class="italic">🔗 Thomas y Álvaro estudiaron juntos</span></p>
+<p class="text-md text-gray-800 italic leading-snug">"Tuve el honor de coincidir con este pedazo de profesional hace poco más de un año y ha sido increíble el poder conocer a una persona tan apasionada de su trabajo, si lo tuviese que definir en una palabra sería vocación. Se nota que ama lo que hace. Desde luego contar con Álvaro es signo de garantía."</p>
 </div>
 </div>
-<p class="text-gray-700 mb-4">"Trabajar con Álvaro ha sido una experiencia transformadora para nuestro equipo. Su conocimiento sobre estrategias de marca personal y su capacidad para implementarlas de manera efectiva ha mejorado significativamente nuestra presencia en LinkedIn."</p>
-<div class="flex justify-end">
-<div class="w-6 h-6 flex items-center justify-center text-blue-600">
-<i class="ri-linkedin-fill"></i>
-</div>
-</div>
-</div>
-<div class="testimonial-card bg-white p-6 rounded-lg shadow-sm">
-<div class="flex items-start mb-4">
-<div class="w-12 h-12 rounded-full overflow-hidden mr-4 flex-shrink-0">
-<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20business%20man%2C%2030s%2C%20casual%20business%20attire%2C%20neutral%20background%2C%20high%20quality%20professional%20photography&width=100&height=100&seq=5&orientation=squarish" alt="Carlos Rodríguez" class="w-full h-full object-cover object-top">
-</div>
+<div class="swiper-slide bg-gray-100 rounded-xl shadow p-6 m-2 h-auto flex flex-col justify-between" style="padding: 2rem; background: #fff; border-radius: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.05);max-width: 800px; margin: 0 auto; color: #222;">
 <div>
-<h4 class="font-semibold">Carlos Rodríguez</h4>
-<p class="text-sm text-gray-600">CEO, Innova Digital</p>
+<h3 class="text-xl font-semibold text-yellow-600 mb-1">Lola Fernández Fuentes</h3>
+<p class="text-sm text-gray-500 mb-1">RPA Developer | Automatización de procesos | Técnico de operaciones y mantenimiento de RPA | Blue Prism Certified Developer</p>
+<p class="text-xs text-gray-400 mb-3">📅 16 de junio de 2025 — <span class="italic">🔗 Lola trabajaba con Álvaro, pero en distintos equipos</span></p>
+<p class="text-md text-gray-800 italic leading-snug">"Álvaro ha gestionado mi candidatura para un proceso de selección de perfil IT en Ayesa. Desde el primer contacto se ha mostrado cercano y accesible, sin dejar de ser profesional (una combinación poco habitual y muy de agradecer en los procesos de selección).  Ha estado pendiente, no solo de los temas técnicos o laborales, sino también de cómo me he ido sintiendo en cada una de las etapas.  Gracias a su forma de trabajar, el proceso ha sido claro, rápido y sencillo. Y en mi caso, además, ha terminado en una contratación."</p>
 </div>
 </div>
-<p class="text-gray-700 mb-4">"Álvaro tiene un talento excepcional para identificar oportunidades de networking y convertirlas en relaciones profesionales valiosas. Su enfoque estratégico y su genuino interés por ayudar a otros lo convierten en un colaborador invaluable."</p>
-<div class="flex justify-end">
-<div class="w-6 h-6 flex items-center justify-center text-blue-600">
-<i class="ri-linkedin-fill"></i>
-</div>
-</div>
-</div>
-<div class="testimonial-card bg-white p-6 rounded-lg shadow-sm">
-<div class="flex items-start mb-4">
-<div class="w-12 h-12 rounded-full overflow-hidden mr-4 flex-shrink-0">
-<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20business%20woman%2C%2035s%2C%20smart%20casual%20attire%2C%20neutral%20background%2C%20high%20quality%20professional%20photography&width=100&height=100&seq=6&orientation=squarish" alt="Laura Martínez" class="w-full h-full object-cover object-top">
-</div>
+<div class="swiper-slide bg-gray-100 rounded-xl shadow p-6 m-2 h-auto flex flex-col justify-between" style="padding: 2rem; background: #fff; border-radius: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.05);max-width: 800px; margin: 0 auto; color: #222;">
 <div>
-<h4 class="font-semibold">Laura Martínez</h4>
-<p class="text-sm text-gray-600">Consultora de RRHH, Talent Plus</p>
+<h3 class="text-xl font-semibold text-yellow-600 mb-1">Carlota González Vega</h3>
+<p class="text-sm text-gray-500 mb-1">ADE + Business Analytics | ICADE | Wharton</p>
+<p class="text-xs text-gray-400 mb-3">📅 16 de junio de 2025 — <span class="italic">🔗 Álvaro ocupaba un cargo superior al de Carlota, pero no supervisaba directamente a Carlota</span></p>
+<p class="text-md text-gray-800 italic leading-snug">"He tenido la suerte de contar con Álvaro como coach en mi proceso de entrada al mundo laboral. Me ha ayudado mucho con sus consejos a la hora de encontrar prácticas en consulting, entendiendo lo que busco y siendo también realista. Es muy buen profesional, súper atento y motivado a ayudarte con todo lo que está en su mano.  Sinceramente le recomendaría contactar con Álvaro a cualquier persona como yo que esté un poco perdida a la hora de construir su camino al principio, ya que seguro que con él aprendéis muchísimo sobre todos estos procesos que pueden ser un poco overwhelming si es tu primera vez.  Solo puedo darle las gracias, es un crack!!!"</p>
 </div>
 </div>
-<p class="text-gray-700 mb-4">"He tenido el placer de colaborar con Álvaro en varios proyectos relacionados con el desarrollo profesional. Su conocimiento sobre LinkedIn y estrategias de marca personal es profundo y actualizado, lo que lo convierte en un recurso invaluable para cualquier profesional."</p>
-<div class="flex justify-end">
-<div class="w-6 h-6 flex items-center justify-center text-blue-600">
-<i class="ri-linkedin-fill"></i>
+<div class="swiper-slide bg-gray-100 rounded-xl shadow p-6 m-2 h-auto flex flex-col justify-between" style="padding: 2rem; background: #fff; border-radius: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.05);max-width: 800px; margin: 0 auto; color: #222;">
+<div>
+<h3 class="text-xl font-semibold text-yellow-600 mb-1">Maria Barrero Martínez</h3>
+<p class="text-sm text-gray-500 mb-1">Técnico de selección de personal | Talent Acquisition | Recursos humanos, IT en Ayesa</p>
+<p class="text-xs text-gray-400 mb-3">📅 11 de junio de 2025 — <span class="italic">🔗 María trabajaba con Álvaro en el mismo equipo</span></p>
+<p class="text-md text-gray-800 italic leading-snug">"Tengo la suerte de trabajar codo con codo con Álvaro en el equipo de selección de Ayesa.  Desde el primer día me hizo sentir bienvenida: fue de los primeros en presentarse y ofrecerme su ayuda de forma cercana y amable, algo que valoro muchísimo y que dice mucho de cómo es como persona y profesional.  Álvaro destaca por ser resolutivo, comprometido y con un conocimiento profundo del sector IT. Tiene una capacidad increíble para adaptarse a diferentes procesos y perfiles, siempre con una actitud proactiva. Además, sabe cómo conectar con los candidatos y transmitir confianza, algo que marca una gran diferencia en nuestra labor diaria."</p>
+</div>
+</div>
+<div class="swiper-slide bg-gray-100 rounded-xl shadow p-6 m-2 h-auto flex flex-col justify-between" style="padding: 2rem; background: #fff; border-radius: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.05);max-width: 800px; margin: 0 auto; color: #222;">
+<div>
+<h3 class="text-xl font-semibold text-yellow-600 mb-1">Fabiola Elizabeth Grijalva Endara</h3>
+<p class="text-sm text-gray-500 mb-1">Ingeniera en Sistemas Computacionales en Universidad Católica de Santiago de Guayaquil</p>
+<p class="text-xs text-gray-400 mb-3">📅 7 de febrero de 2025 — <span class="italic">🔗 Fabiola fue cliente de Álvaro</span></p>
+<p class="text-md text-gray-800 italic leading-snug">"Álvaro Fernández es un profesional excepcional en el campo del reclutamiento. Tuve el placer de trabajar con él durante mi reciente cambio de empresa, y su apoyo fue invaluable. Gracias a su dedicación, habilidades de comunicación y capacidad para identificar oportunidades adecuadas, el proceso de transición fue mucho más sencillo y exitoso."</p>
+</div>
+</div>
+<div class="swiper-slide bg-gray-100 rounded-xl shadow p-6 m-2 h-auto flex flex-col justify-between" style="padding: 2rem; background: #fff; border-radius: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.05);max-width: 800px; margin: 0 auto; color: #222;">
+<div>
+<h3 class="text-xl font-semibold text-yellow-600 mb-1">Óscar Fernández García</h3>
+<p class="text-sm text-gray-500 mb-1">Data Management Consultant at Nter Tech | Pentaho | SQL | PLSQL | ETL | Unix | Tableau</p>
+<p class="text-xs text-gray-400 mb-3">📅 9 de abril de 2025 — <span class="italic">🔗 Óscar fue cliente de Álvaro</span></p>
+<p class="text-md text-gray-800 italic leading-snug">"Tuve la oportunidad de obtener asesoramiento por parte de Álvaro en el área de recursos humanos. Me ha brindado unos valiosos consejos sobre cómo reestructurar y resaltar mis habilidades. Un chico muy implicado en su trabajo."</p>
+</div>
+</div>
+<div class="swiper-slide bg-gray-100 rounded-xl shadow p-6 m-2 h-auto flex flex-col justify-between" style="padding: 2rem; background: #fff; border-radius: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.05);max-width: 800px; margin: 0 auto; color: #222;">
+<div>
+<h3 class="text-xl font-semibold text-yellow-600 mb-1">João Nunes</h3>
+<p class="text-sm text-gray-500 mb-1">Data Analysis | Business Analysis | Data Science</p>
+<p class="text-xs text-gray-400 mb-3">📅 17 de abril de 2025 — <span class="italic">🔗 João fue cliente de Álvaro</span></p>
+<p class="text-md text-gray-800 italic leading-snug">"Tuve la suerte y el placer de haber sido contactado por Álvaro en LinkedIn, en su búsqueda de candidatos para una posición. Durante todo el proceso, me acompañó, me apoyó, se comunicó constantemente y se aseguró de que todo saliera de la mejor manera posible. Incluso estando yo muy lejos de España, en Brasil, logró que todo estuviera muy bien organizado. Agradezco muchísimo todo el apoyo durante el proceso, y hoy estoy muy feliz de poder decir que estoy viviendo en España."</p>
+</div>
+</div>
+<div class="swiper-slide bg-gray-100 rounded-xl shadow p-6 m-2 h-auto flex flex-col justify-between" style="padding: 2rem; background: #fff; border-radius: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.05);max-width: 800px; margin: 0 auto; color: #222;">
+<div>
+<h3 class="text-xl font-semibold text-yellow-600 mb-1">David de la Cruz Viana</h3>
+<p class="text-sm text-gray-500 mb-1">Senior Business Manager en Ayesa | Banking | Business Intelligence | Advanced Analytics | DevOps | Hazelcast | RPA | Artificial Intelligence</p>
+<p class="text-xs text-gray-400 mb-3">📅 25 de abril de 2025 — <span class="italic">🔗 David ocupaba un cargo superior al de Álvaro, pero no lo supervisaba directamente</span></p>
+<p class="text-md text-gray-800 italic leading-snug">"Gran profesional, comprometido y siempre apoyándome en las búsquedas de nuevos profesionales para los proyectos que gestiono. Con total seguridad le recomiendo dentro de mi equipo."</p>
+</div>
+</div>
+<div class="swiper-slide bg-gray-100 rounded-xl shadow p-6 m-2 h-auto flex flex-col justify-between" style="padding: 2rem; background: #fff; border-radius: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.05);max-width: 800px; margin: 0 auto; color: #222;">
+<div>
+<h3 class="text-xl font-semibold text-yellow-600 mb-1">Sita Narisoa</h3>
+<p class="text-sm text-gray-500 mb-1">Desarrollador Full Stack | 42 Student | .NET | .NETCore | C# | Angular | C | SQL | Git | Bootstrap</p>
+<p class="text-xs text-gray-400 mb-3">📅 25 de abril de 2025 — <span class="italic">🔗 Sita trabajaba con Álvaro en el mismo equipo</span></p>
+<p class="text-md text-gray-800 italic leading-snug">"Fui contactado por Álvaro a través de LinkedIn para un puesto de trabajo. Puedo decir lo responsable y eficaz que es Álvaro en su trabajo, ya que tuve un proceso de selección que no llegó ni a durar una semana.  Durante todo el proceso, el trato y la actitud de Álvaro fue muy encantador.  Ha sido un placer haberte conocido, Álvaro."</p>
+</div>
+</div>
+<div class="swiper-slide bg-gray-100 rounded-xl shadow p-6 m-2 h-auto flex flex-col justify-between" style="padding: 2rem; background: #fff; border-radius: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.05);max-width: 800px; margin: 0 auto; color: #222;">
+<div>
+<h3 class="text-xl font-semibold text-yellow-600 mb-1">Ismael Gonzalez Garrido</h3>
+<p class="text-sm text-gray-500 mb-1">QA Automation Engineer | ISTQB Certified Tester</p>
+<p class="text-xs text-gray-400 mb-3">📅 29 de abril de 2025 — <span class="italic">🔗 Ismael trabajaba con Álvaro, pero en distintos equipos</span></p>
+<p class="text-md text-gray-800 italic leading-snug">"Todo el proceso con Álvaro ha sido genial desde el primer contacto hasta la incorporación con la empresa.  En mi caso era una oportunidad muy buena para personas con discapacidad y, qué decir de su capacidad para entender la situación y ayudar en todo lo necesario.  Por último, añadir que es la primera vez para mí en que una incorporación vaya todo tan rápido y tan sencillo.  Hacen falta más personas como Álvaro en el ámbito laboral. ¡Recomendable!"</p>
+</div>
+</div>
+<div class="swiper-slide bg-gray-100 rounded-xl shadow p-6 m-2 h-auto flex flex-col justify-between" style="padding: 2rem; background: #fff; border-radius: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.05);max-width: 800px; margin: 0 auto; color: #222;">
+<div>
+<h3 class="text-xl font-semibold text-yellow-600 mb-1">Lucía Manso Álvarez</h3>
+<p class="text-sm text-gray-500 mb-1">Recruitment Consultant | People &amp; Culture en IZERTIS | Abogada Colegiada</p>
+<p class="text-xs text-gray-400 mb-3">📅 7 de mayo de 2025 — <span class="italic">🔗 Lucía trabajaba con Álvaro, pero en distintas empresas</span></p>
+<p class="text-md text-gray-800 italic leading-snug">"Álvaro destaca especialmente en los procesos de selección de personal, demostrando una gran habilidad tanto en la gestión de perfiles IT como generalistas.  Su enfoque es siempre meticuloso, estratégico y orientado a encontrar al candidato ideal para cada posición.  Además de su expertise técnico, lo que realmente marca la diferencia al trabajar con Álvaro es su actitud. Siempre está dispuesto a ayudar, aportar ideas y soluciones. Tiene una gran capacidad para generar confianza y una excelente disposición para resolver cualquier duda o situación que pueda surgir.  Sin duda, Álvaro es una de esas personas con las que siempre querrías contar en tu equipo: comprometido, profesional y cercano."</p>
+</div>
+</div>
+<div class="swiper-slide bg-gray-100 rounded-xl shadow p-6 m-2 h-auto flex flex-col justify-between" style="padding: 2rem; background: #fff; border-radius: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.05);max-width: 800px; margin: 0 auto; color: #222;">
+<div>
+<h3 class="text-xl font-semibold text-yellow-600 mb-1">Luis Cancio</h3>
+<p class="text-sm text-gray-500 mb-1">Analista funcional Banca</p>
+<p class="text-xs text-gray-400 mb-3">📅 8 de mayo de 2025 — <span class="italic">🔗 Luis trabajaba con Álvaro en el mismo equipo</span></p>
+<p class="text-md text-gray-800 italic leading-snug">"Hola, gracias a Álvaro he entrado a trabajar en Ayesa. Es un buen profesional, trato muy agradable, y muy activo en LinkedIn, donde entramos en contacto."</p>
+</div>
+</div>
+<div class="swiper-slide bg-gray-100 rounded-xl shadow p-6 m-2 h-auto flex flex-col justify-between" style="padding: 2rem; background: #fff; border-radius: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.05);max-width: 800px; margin: 0 auto; color: #222;">
+<div>
+<h3 class="text-xl font-semibold text-yellow-600 mb-1">María Avilés Hernández</h3>
+<p class="text-sm text-gray-500 mb-1">Especialista en Adquisición de Talento TI en Ayesa | Consultoría de recursos humanos | Talent Acquisition | Recruitment Consultant | Headhunter</p>
+<p class="text-xs text-gray-400 mb-3">📅 7 de mayo de 2025 — <span class="italic">🔗 María trabajaba con Álvaro, pero en distintos equipos</span></p>
+<p class="text-md text-gray-800 italic leading-snug">"Trabajo día a día con Álvaro y sólo puedo decir cosas buenas de él como compañero: implicación al máximo, dedicación y pasión por su trabajo.  Disfruta con el contacto con las personas, brindándoles su ayuda en todo lo que sea posible, sean compañeros de trabajo o personas en búsqueda de empleo.  ¡Una persona que merece la pena tener en el equipo, sin duda!"</p>
+</div>
+</div>
+<div class="swiper-slide bg-gray-100 rounded-xl shadow p-6 m-2 h-auto flex flex-col justify-between" style="padding: 2rem; background: #fff; border-radius: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.05);max-width: 800px; margin: 0 auto; color: #222;">
+<div>
+<h3 class="text-xl font-semibold text-yellow-600 mb-1">Ángel García Garbaya</h3>
+<p class="text-sm text-gray-500 mb-1">Lead of Managed Services Center at Izertis Spain</p>
+<p class="text-xs text-gray-400 mb-3">📅 24 de abril de 2025 — <span class="italic">🔗 Ángel ocupaba un cargo superior al de Álvaro, pero no lo supervisaba directamente</span></p>
+<p class="text-md text-gray-800 italic leading-snug">"Tuve la oportunidad de trabajar con Álvaro en Izertis. Él con un rol dentro del área de Recruitment y el mío dentro del área de Operaciones.  Destaco especialmente su compromiso y liderazgo en cada proceso de selección. Más allá de su capacidad para identificar el talento adecuado para los proyectos y servicios del negocio, lo que realmente lo diferencia es su cercanía, empatía y la habilidad para generar un ambiente laboral positivo y colaborativo.  Siempre está dispuesto a apoyar a las áreas con una actitud proactiva y una gran disposición para entender las necesidades específicas de cada equipo.  Es un profesional valioso con el que siempre es un gusto colaborar.  Siempre es un placer poder contar con su predisposición a colaborar y agilizar el proceso de selección. Una persona 100% profesional.  José Miguel Aranda Bernabe"</p>
+</div>
+</div>
+<div class="swiper-slide bg-gray-100 rounded-xl shadow p-6 m-2 h-auto flex flex-col justify-between" style="padding: 2rem; background: #fff; border-radius: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.05);max-width: 800px; margin: 0 auto; color: #222;">
+<div>
+<h3 class="text-xl font-semibold text-yellow-600 mb-1">Lead &amp; Internal Auditor | ISO27001 | ISO 22301 | ENS | Head of Talent | Cybersecurity &amp; People Expert</h3>
+<p class="text-sm text-gray-500 mb-1">Certificado en: SPHRi | PMP | CAPM | PSM | FCE | AZ900 | SC900</p>
+<p class="text-xs text-gray-400 mb-3">📅 11 de febrero de 2025 — <span class="italic">🔗 José Miguel trabajaba con Álvaro en el mismo equipo</span></p>
+<p class="text-md text-gray-800 italic leading-snug">"Álvaro es un excelente profesional del ámbito de la Atracción de Talento.  Conoce el sector donde opera y se esmera en cuidar todos los detalles relacionados con sus funciones y el ciclo de vida de la gestión de los procesos de selección de personal.  A nivel personal, es una persona con excelentes valores, el cual genera a su alrededor — tanto con su equipo como otros profesionales — un ambiente de cercanía, confianza y comunicación constante.  Un valor clave y diferencial en cualquier equipo que se precie alrededor de la Gestión de Personas dentro de una organización."</p>
+</div>
+</div>
+<div class="swiper-slide bg-gray-100 rounded-xl shadow p-6 m-2 h-auto flex flex-col justify-between" style="padding: 2rem; background: #fff; border-radius: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.05);max-width: 800px; margin: 0 auto; color: #222;">
+<div>
+<h3 class="text-xl font-semibold text-yellow-600 mb-1">Armando Camacho</h3>
+<p class="text-sm text-gray-500 mb-1">Talent Acquisition Specialist - IT &amp; Cybersecurity - Employer Branding - Talent Management at SiderTia by Izertis</p>
+<p class="text-xs text-gray-400 mb-3">📅 9 de enero de 2025 — <span class="italic">🔗 Armando ocupaba un cargo superior al de Álvaro, pero no lo supervisaba directamente</span></p>
+<p class="text-md text-gray-800 italic leading-snug">"Álvaro es una excepcional persona, y aún mejor profesional en el ámbito de atracción de talento IT.  Destaco su predisposición, sus ganas de aprender y su capacidad de dedicación en los proyectos que participa, superando siempre las expectativas.  Su implicación por encima de lo normal y su predisposición al trabajo en equipo hacen que Álvaro sea una persona que, por sus actitudes, conocimientos y valores, represente un valor diferencial para toda organización."</p>
+</div>
+</div>
+<div class="swiper-slide bg-gray-100 rounded-xl shadow p-6 m-2 h-auto flex flex-col justify-between" style="padding: 2rem; background: #fff; border-radius: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.05);max-width: 800px; margin: 0 auto; color: #222;">
+<div>
+<h3 class="text-xl font-semibold text-yellow-600 mb-1">Cristina Calvo Rodríguez</h3>
+<p class="text-sm text-gray-500 mb-1">Human Resources &amp; Talent Acquisition</p>
+<p class="text-xs text-gray-400 mb-3">📅 5 de marzo de 2024 — <span class="italic">🔗 Cristina supervisaba directamente a Álvaro</span></p>
+<p class="text-md text-gray-800 italic leading-snug">"He tenido la suerte de compartir con Álvaro parte de mi etapa en Capgemini. Aposté por él y no me confundí.  Gran profesional, siempre dispuesto a ayudar al equipo y seguir aprendiendo, con una gran capacidad de resolución y mostrando interés por crecer cada día."</p>
+</div>
+</div>
+<div class="swiper-slide bg-gray-100 rounded-xl shadow p-6 m-2 h-auto flex flex-col justify-between" style="padding: 2rem; background: #fff; border-radius: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.05);max-width: 800px; margin: 0 auto; color: #222;">
+<div>
+<h3 class="text-xl font-semibold text-yellow-600 mb-1">Mayte Montero</h3>
+<p class="text-sm text-gray-500 mb-1">Continuidad de Negocio y Ciberseguridad</p>
+<p class="text-xs text-gray-400 mb-3">📅 24 de abril de 2025 — <span class="italic">🔗 Mayte ocupaba un cargo superior al de Álvaro, pero no lo supervisaba directamente</span></p>
+<p class="text-md text-gray-800 italic leading-snug">"Tuve la suerte de trabajar con Álvaro y poder comprobar su excelente actitud, disponibilidad y profesionalidad. Sus grandes conocimientos en el sector y la empatía hacen que la búsqueda y la atracción de talento sea la idónea. Es de las personas que siempre quieres tener en tu equipo. ¡Sería un placer volver a coincidir con él!"</p>
+</div>
+</div>
+<div class="swiper-slide bg-gray-100 rounded-xl shadow p-6 m-2 h-auto flex flex-col justify-between" style="padding: 2rem; background: #fff; border-radius: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.05);max-width: 800px; margin: 0 auto; color: #222;">
+<div>
+<h3 class="text-xl font-semibold text-yellow-600 mb-1">Aníbal Álvarez</h3>
+<p class="text-sm text-gray-500 mb-1">Profesional en Educación, Liderazgo de Equipos y Gestión de Clientes | Inglés Bilingüe | Transformación Digital y Análisis de Datos</p>
+<p class="text-xs text-gray-400 mb-3">📅 7 de mayo de 2025 — <span class="italic">🔗 Aníbal y Álvaro estudiaron juntos</span></p>
+<p class="text-md text-gray-800 italic leading-snug">"Desde que nos formamos juntos y en las numerosas ocasiones en que he tenido conocimiento de las habilidades profesionales de Álvaro, siempre se han reconocido sus buenas dotes: profesionalidad, ganas de aprender, excelentes capacidades de trabajo en equipo y una gran muestra de iniciativa. No solo han sido estas características mencionadas en múltiples ocasiones por compañeros y superiores de Álvaro, sino que además, él mismo se asegura de cumplirlas a rajatabla y demostrarlas en su día a día. Recomendaría a Álvaro para cualquier empresa del ámbito de la consultoría y los Recursos Humanos."</p>
+</div>
+</div>
+<div class="swiper-slide bg-gray-100 rounded-xl shadow p-6 m-2 h-auto flex flex-col justify-between" style="padding: 2rem; background: #fff; border-radius: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.05);max-width: 800px; margin: 0 auto; color: #222;">
+<div>
+<h3 class="text-xl font-semibold text-yellow-600 mb-1">María Avilés Hernández</h3>
+<p class="text-sm text-gray-500 mb-1">Especialista en Adquisición de Talento TI en Ayesa | Consultoría de Recursos Humanos | Talent Acquisition | Recruitment Consultant | Headhunter</p>
+<p class="text-xs text-gray-400 mb-3">📅 7 de mayo de 2025 — <span class="italic">🔗 María trabajaba con Álvaro, pero en distintos equipos</span></p>
+<p class="text-md text-gray-800 italic leading-snug">"Trabajo día a día con Álvaro y sólo puedo decir cosas buenas de él como compañero: implicación al máximo, dedicación y pasión por su trabajo. Disfruta con el contacto con las personas, brindándoles su ayuda en todo lo que sea posible, sean compañeros de trabajo o personas en búsqueda de empleo. ¡Una persona que merece la pena tener en el equipo, sin duda!"</p>
+</div>
+</div>
+<div class="swiper-slide bg-gray-100 rounded-xl shadow p-6 m-2 h-auto flex flex-col justify-between" style="padding: 2rem; background: #fff; border-radius: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.05);max-width: 800px; margin: 0 auto; color: #222;">
+<div>
+<h3 class="text-xl font-semibold text-yellow-600 mb-1">María Queipo Bravo</h3>
+<p class="text-sm text-gray-500 mb-1">Recursos Humanos</p>
+<p class="text-xs text-gray-400 mb-3">📅 23 de abril de 2025 — <span class="italic">🔗 María trabajaba con Álvaro en el mismo equipo</span></p>
+<p class="text-md text-gray-800 italic leading-snug">"Trabajar con Álvaro en el área de selección IT en Ayesa es un lujo. Es una persona con muy buena actitud, de esos compañeros que contagian energía. Proactivo, con iniciativa, siempre un paso por delante y con unas ganas brutales de hacer bien las cosas. Es muy bueno en lo suyo, da gusto trabajar con él. ¡Un auténtico crack!"</p>
+</div>
+</div>
+<div class="swiper-slide bg-gray-100 rounded-xl shadow p-6 m-2 h-auto flex flex-col justify-between" style="padding: 2rem; background: #fff; border-radius: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.05);max-width: 800px; margin: 0 auto; color: #222;">
+<div>
+<h3 class="text-xl font-semibold text-yellow-600 mb-1">Ana María Romero</h3>
+<p class="text-sm text-gray-500 mb-1">IT Recruitment Consultant</p>
+<p class="text-xs text-gray-400 mb-3">📅 6 de marzo de 2025 — <span class="italic">🔗 Ana María trabajaba con Álvaro, pero en distintas empresas</span></p>
+<p class="text-md text-gray-800 italic leading-snug">"Excelente compañero del sector, comprometido y muy muy profesional. ¡Un placer haber podido coincidir con Álvaro en mi carrera!"</p>
 </div>
 </div>
 </div>
+<div class="swiper-pagination mt-4"></div>
 </div>
 </div>
 </section>
+<!-- Swiper.js CDN -->
+<link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <!-- Contact Section -->
 <section class="py-16 bg-white" id="contacto">
 <div class="container mx-auto px-4">
@@ -219,37 +380,37 @@ Conocer más sobre el curso
 <div class="w-10 h-10 flex items-center justify-center text-primary mr-3">
 <i class="ri-linkedin-box-fill ri-lg"></i>
 </div>
-<a href="https://www.linkedin.com/in/alvarofdezcachafeiro/" target="_blank" class="text-gray-700 hover:text-primary transition-colors">linkedin.com/in/alvarofdezcachafeiro</a>
+<a class="text-gray-700 hover:text-primary transition-colors" href="https://www.linkedin.com/in/alvarofdezcachafeiro/" target="_blank">linkedin.com/in/alvarofdezcachafeiro</a>
 </div>
 <div class="flex items-center">
 <div class="w-10 h-10 flex items-center justify-center text-primary mr-3">
 <i class="ri-instagram-fill ri-lg"></i>
 </div>
-<a href="https://www.instagram.com/caacha97/" target="_blank" class="text-gray-700 hover:text-primary transition-colors">@caacha97</a>
+<a class="text-gray-700 hover:text-primary transition-colors" href="https://www.instagram.com/caacha97/" target="_blank">@caacha97</a>
 </div>
 <div class="flex items-center">
 <div class="w-10 h-10 flex items-center justify-center text-primary mr-3">
 <i class="ri-mail-fill ri-lg"></i>
 </div>
-<a href="mailto:alvarofcachafeiro@gmail.com" class="text-gray-700 hover:text-primary transition-colors">alvarofcachafeiro@gmail.com</a>
+<a class="text-gray-700 hover:text-primary transition-colors" href="mailto:alvarofcachafeiro@gmail.com">alvarofcachafeiro@gmail.com</a>
 </div>
 </div>
 </div>
 <div class="w-full md:w-1/2 p-8 bg-white">
 <form>
 <div class="mb-4">
-<label for="name" class="block text-gray-700 mb-2">Nombre</label>
-<input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" placeholder="Tu nombre">
+<label class="block text-gray-700 mb-2" for="name">Nombre</label>
+<input class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" id="name" placeholder="Tu nombre" type="text"/>
 </div>
 <div class="mb-4">
-<label for="email" class="block text-gray-700 mb-2">Email</label>
-<input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" placeholder="Tu email">
+<label class="block text-gray-700 mb-2" for="email">Email</label>
+<input class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" id="email" placeholder="Tu email" type="email"/>
 </div>
 <div class="mb-6">
-<label for="message" class="block text-gray-700 mb-2">Mensaje</label>
-<textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" placeholder="Tu mensaje"></textarea>
+<label class="block text-gray-700 mb-2" for="message">Mensaje</label>
+<textarea class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" id="message" placeholder="Tu mensaje" rows="4"></textarea>
 </div>
-<button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-blue-600 transition-colors">Enviar mensaje</button>
+<button class="w-full bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-blue-600 transition-colors" type="submit">Enviar mensaje</button>
 </form>
 </div>
 </div>
@@ -261,27 +422,27 @@ Conocer más sobre el curso
 <div class="container mx-auto px-4">
 <div class="flex flex-col md:flex-row justify-between items-center">
 <div class="mb-6 md:mb-0">
-<a href="#" class="text-2xl font-['Pacifico'] text-white">Álvaro</a>
+<a class="text-2xl font-['Pacifico'] text-white" href="#">Álvaro</a>
 <p class="mt-2 text-gray-400">© 2025 Álvaro Fernández Cachafeiro. Todos los derechos reservados.</p>
 <div class="flex items-center mt-4 space-x-3">
 <p class="text-gray-400 text-sm">Web desarrollada por</p>
-<a href="https://tusendadigital.com/" target="_blank" class="flex items-center space-x-2 hover:opacity-80 transition-opacity">
-<img src="https://static.readdy.ai/image/2e20d4d8a8cb5d0f970d00024319a37a/4c9bdf9ee1a3e6398d9153ce6faeb36a.png" alt="Tu Senda Digital" class="w-8 h-8 object-contain">
+<a class="flex items-center space-x-2 hover:opacity-80 transition-opacity" href="https://tusendadigital.com/" target="_blank">
+<img alt="Tu Senda Digital" class="w-8 h-8 object-contain" src="https://static.readdy.ai/image/2e20d4d8a8cb5d0f970d00024319a37a/4c9bdf9ee1a3e6398d9153ce6faeb36a.png"/>
 <span class="text-gray-400 text-sm">Tu Senda Digital</span>
 </a>
 </div>
 </div>
 <div class="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-8">
-<a href="#sobre-mi" class="text-gray-400 hover:text-white transition-colors">Sobre mí</a>
-<a href="#proyecto" class="text-gray-400 hover:text-white transition-colors">Proyecto destacado</a>
-<a href="#recomendaciones" class="text-gray-400 hover:text-white transition-colors">Recomendaciones</a>
-<a href="#contacto" class="text-gray-400 hover:text-white transition-colors">Contacto</a>
+<a class="text-gray-400 hover:text-white transition-colors" href="#sobre-mi">Sobre mí</a>
+<a class="text-gray-400 hover:text-white transition-colors" href="#proyecto">Proyecto destacado</a>
+<a class="text-gray-400 hover:text-white transition-colors" href="#recomendaciones">Recomendaciones</a>
+<a class="text-gray-400 hover:text-white transition-colors" href="#contacto">Contacto</a>
 </div>
 <div class="mt-6 md:mt-0 flex space-x-4">
-<a href="https://www.linkedin.com/in/alvarofdezcachafeiro/" target="_blank" class="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-white transition-colors">
+<a class="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-white transition-colors" href="https://www.linkedin.com/in/alvarofdezcachafeiro/" target="_blank">
 <i class="ri-linkedin-fill ri-lg"></i>
 </a>
-<a href="https://www.instagram.com/caacha97/" target="_blank" class="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-white transition-colors">
+<a class="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-white transition-colors" href="https://www.instagram.com/caacha97/" target="_blank">
 <i class="ri-instagram-line ri-lg"></i>
 </a>
 </div>
@@ -289,7 +450,7 @@ Conocer más sobre el curso
 </div>
 </footer>
 <!-- Back to top button -->
-<button id="backToTop" class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 transition-opacity duration-300">
+<button class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 transition-opacity duration-300" id="backToTop">
 <i class="ri-arrow-up-line ri-lg"></i>
 </button>
 <script id="mobileMenuScript">
@@ -370,5 +531,44 @@ form.reset();
 });
 });
 </script>
-</body>
+<script>
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    speed: 3000,
+    autoplay: {
+        delay: 1,
+        disableOnInteraction: false,
+    },
+    allowTouchMove: false,
+    breakpoints: {
+        768: {
+            slidesPerView: 1.2,
+        },
+        1024: {
+            slidesPerView: 1.5,
+        },
+        1440: {
+            slidesPerView: 2,
+        }
+    }
+});
+
+var swiperContainer = document.querySelector(".mySwiper");
+
+swiperContainer.addEventListener("mouseenter", function () {
+    swiper.autoplay.stop();
+});
+swiperContainer.addEventListener("mouseleave", function () {
+    swiper.autoplay.start();
+});
+
+swiperContainer.addEventListener("touchstart", function () {
+    swiper.autoplay.stop();
+});
+swiperContainer.addEventListener("touchend", function () {
+    swiper.autoplay.start();
+});
+</script></body>
 </html>
